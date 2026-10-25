@@ -58,12 +58,7 @@ class Employee {
 
     @Override
     public String toString() {
-        return "Employee{" +
-                "id=" + id +
-                ", Ф. И. О.='" + fullName + '\'' +
-                ", отдел=" + department +
-                ", зарплата=" + salary +
-                '}';
+        return "Employee{" + "id=" + id + ", Ф. И. О.='" + fullName + '\'' + ", отдел=" + department + ", зарплата=" + salary + '}';
     }
 
     public void printShortInfo() {
@@ -123,9 +118,7 @@ class Employee {
                     }
                     break;
                 default:
-                    throw new IllegalArgumentException(
-                            "Тип налога должен быть PROPORTIONAL или PROGRESSIVE"
-                    );
+                    throw new IllegalArgumentException("Тип налога должен быть PROPORTIONAL или PROGRESSIVE");
             }
 
             System.out.println(
@@ -140,8 +133,7 @@ class Employee {
                 continue;
             }
 
-            int newSalary = employee.getSalary()
-                    + employee.getSalary() * percent / 100;
+            int newSalary = employee.getSalary() + employee.getSalary() * percent / 100;
             employee.setSalary(newSalary);
         }
     }
@@ -207,7 +199,6 @@ class Employee {
 
     public static void main(String[] args) {
         EmployeeBook book = new EmployeeBook();
-
         Employee[] initialEmployees = {
                 new Employee("Иванов Иван Иванович", 1, 100),
                 new Employee("Петров Петр Петрович", 1, 150),
@@ -243,8 +234,7 @@ class Employee {
         System.out.println("\nСотрудники с зарплатой ниже 200 (первые 3):");
         book.printEmployeesWithSalaryBelow(200, 3);
 
-        System.out.println("\nЕсть ли сотрудник с зарплатой 250: "
-                + book.containsBySalary(new Employee("Другой сотрудник", 5, 250)));
+        System.out.println("\nЕсть ли сотрудник с зарплатой 250: " + book.containsBySalary(new Employee("Другой сотрудник", 5, 250)));
 
         System.out.println("\nСотрудник с id 3:");
         Employee found = book.getEmployeeById(3);
@@ -254,7 +244,6 @@ class Employee {
         book.indexSalaries(1, 10);
         book.printAllEmployees();
 
-        System.out.println("\nДобавление 11-го сотрудника: "
-                + book.addEmployee(new Employee("Новый сотрудник", 5, 100)));
+        System.out.println("\nДобавление 11-го сотрудника: " + book.addEmployee(new Employee("Новый сотрудник", 5, 100)));
     }
 }
